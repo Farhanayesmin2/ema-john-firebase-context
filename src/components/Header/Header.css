@@ -1,0 +1,25 @@
+.header{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+    background-color: darkblue;
+    height: 80px;
+    padding-left: 140px;
+    padding-right: 140px;
+}
+.menu a{
+    font-weight: 600;
+    font-size: 19px;
+    margin-left: 36px;
+    text-decoration: none;
+    color: aliceblue;
+    font-family: 'Lato';
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.header a:hover{
+    color: rgb(153, 249, 244);
+  
+}
+
+
+   

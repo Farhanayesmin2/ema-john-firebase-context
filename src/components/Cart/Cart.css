@@ -1,0 +1,32 @@
+.order-summary{
+    text-align: center;
+    color: darkblue;
+}
+.cart-items{
+    position: sticky;
+    top: 0px;
+    margin-right: 5%;
+}
+.cart-items p{
+font-size: 19px;
+}
+.order-button{
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 15px;
+   margin-bottom: 15px;
+   text-align: center;
+   font-weight: bolder;
+   font-size: 16px;
+   width: 300px;
+   border-radius: 0px 0px 8px 8px;
+   background-color:darkblue;
+   bottom: 0%;
+   border:2px solid white;
+}
+
+.order-button:hover{
+    color:darkblue;
+    background-color: rgb(167, 213, 213);
+    border:2px solid darkblue;
+}

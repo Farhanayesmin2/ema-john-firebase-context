@@ -1,0 +1,18 @@
+.shop-container{
+    margin-left: 2%;
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+.cart-container{
+    background-color: rgb(167, 213, 213);
+    font-family: 'Lato';
+    font-family:cursive;
+    padding-left: 3%;
+}
+.products-container{
+   
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 45px;
+}
