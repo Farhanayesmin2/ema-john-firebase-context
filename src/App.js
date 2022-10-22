@@ -41,6 +41,15 @@ function App() {
           loader: productAndCartLoader,
           element: <Orders></Orders>
         },
+        {
+          path: 'login',
+          element: <Login></Login>
+        },
+        {
+          path: 'signup',
+          element: <SignUp></SignUp>
+        }
+    
 
       ]
     },
@@ -48,15 +57,7 @@ function App() {
       path: 'about',
       element: <About></About>
     },
-    {
-      path: 'login',
-      element: <Login></Login>
-    },
-    {
-      path: 'signup',
-      element: <SignUp></SignUp>
-    }
-
+  
   ]);
   return (
     <div>
