@@ -10,26 +10,31 @@ const auth = getAuth(app);
 
 const UserContext = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+
 
     const createUser = (email,password) => {
         return createUserWithEmailAndPassword(auth, email, password);
     }
+
     const logIn = (email,password) => {
         return signInWithEmailAndPassword(auth, email, password);
-}
+    }
+   
     const logOut = () => {
         return signOut(auth);
-}
+         }
 
 useEffect(() => {
    const unSubscribe = onAuthStateChanged(auth, currentUser => {
         console.log("Current user sated change", currentUser);
-        setUser(currentUser);
+       setUser(currentUser);
+       setLoading(false);
    })
-    return unSubscribe();
+    return () => unSubscribe();
 },[])
 
-   const  authInfo = {user,createUser,logIn,logOut}
+const  authInfo = {user,loading,createUser,logIn,logOut,}
     return (
         <AuthContext.Provider value={authInfo}>
             {

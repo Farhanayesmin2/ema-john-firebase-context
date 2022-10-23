@@ -45,19 +45,19 @@ const SignUp = () => {
                     <label htmlFor='email'>
                          Email
                     </label>
-                    <input type="email" name="email" id="" required />
+                    <input type="email" name="email"  required />
                 </div>
                 <div className='form-control'>
                     <label htmlFor='password'>
                          Password
                     </label>
-                    <input type="password" name="password" id="" required />
+                    <input type="password" name="password"  required />
                 </div>
                 <div className='form-control'>
                     <label htmlFor='confirm'>
                         Confirm Password
                     </label>
-                    <input type="password" name="confirm" id="" required />
+                    <input type="password" name="confirm"  required />
                 </div>
               
                 <input className='btn-login' type="submit" value="SignUp" />

@@ -1,27 +1,30 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/UserContext';
 import './Login.css';
 
 
 const Login = () => {
 
-  //  const [user, setuser] = useState(false);
     const { logIn } = useContext(AuthContext);
-    
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
+
     const handleLogIn = (event) => {
         const form = event.target;
         event.preventDefault();
         const email = form.email.value;
         const password = form.password.value;
         console.log(email,password);
-     //   setuser(true)
+     
      
         logIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
                 form.reset()
+                navigate(from,{replace: true})
             })
             .catch(error => {
                 console.error(error);
@@ -37,13 +40,13 @@ const Login = () => {
                     <label htmlFor='email'>
                          Email
                     </label>
-                    <input type="email" name="email" id="" required />
+                    <input type="email" name="email"  required />
                 </div>
                 <div className='form-control'>
                     <label htmlFor='password'>
                          Password
                     </label>
-                    <input type="password" name="password" id="" required />
+                    <input type="password" name="password"  required />
                 </div>
                 
                 <input className='btn-login' type="submit" value="Login" />
