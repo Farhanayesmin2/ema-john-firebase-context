@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/UserContext';
 import './Login.css';
@@ -6,29 +6,28 @@ import './Login.css';
 
 const Login = () => {
 
-    const [user, setuser] = useState(false);
-    const { logIn} = useContext(AuthContext);
+  //  const [user, setuser] = useState(false);
+    const { logIn } = useContext(AuthContext);
+    
     const handleLogIn = (event) => {
         const form = event.target;
         event.preventDefault();
         const email = form.email.value;
         const password = form.password.value;
-setuser(true)
+        console.log(email,password);
+     //   setuser(true)
+     
         logIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                form.reset()
             })
             .catch(error => {
                 console.error(error);
         })
 
-
-
     }
-
-  
-
 
     return (
         <div className='form-container'>
@@ -38,7 +37,7 @@ setuser(true)
                     <label htmlFor='email'>
                          Email
                     </label>
-                    <input type="email" name="name" id="" required />
+                    <input type="email" name="email" id="" required />
                 </div>
                 <div className='form-control'>
                     <label htmlFor='password'>
