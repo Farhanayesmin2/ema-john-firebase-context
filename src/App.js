@@ -39,6 +39,10 @@ function App() {
           element:  <PrivateRoute><Shipping></Shipping> </PrivateRoute>     
         },
         {
+          path: 'inventory',
+          element:  <PrivateRoute> <Inventory></Inventory> </PrivateRoute>     
+        },
+        {
           path: 'order',
           loader: productAndCartLoader,
           element: <Orders></Orders>

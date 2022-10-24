@@ -24,11 +24,10 @@ const Cart = ({items,clearCart,children}) => {
 } </p>
             <p>Tax: {tax.toFixed(2)} </p>
             <h3>Grand Total: ${grandTotal} </h3>
-            {/* <div >
+             <div >
             <button onClick={clearCart} className='order-button' >Clear Cart</button>
             </div>
            
-             */}
               {children}
               <div>
                 <Link to='/order' > <button className='order-button'>Review Order</button>  </Link></div>
